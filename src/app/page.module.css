@@ -3,13 +3,13 @@
   min-height: 100vh;
   width: 100vw;
   margin-top: 70px;
-  background: #ffffff;
+  background: linear-gradient(#fff 0%,#a7a7a7 100%);
 
 
 }
 .visionPage{
   width: 100vw;
-  min-height: 100vh;
+  min-height: 70vh;
   display:flex;
   position: relative;
   background-size: cover;
@@ -21,6 +21,10 @@
   width: 100vw;
   height: 100%;
 
+}
+.hamburger{
+  position: absolute;
+  right: 30px;
 }
 .visionText{
   width: 90%;
@@ -96,7 +100,7 @@
   border-radius: 10px;
   position: absolute;
   top: 0px;
-  background: #f00;
+  background: #DB0007;
 }
 .sideRhombus2{
   width: 70px;
@@ -106,7 +110,7 @@
  position: absolute;
  bottom: 0px;
  right: 0px;
-  background: #f00;
+  background: #DB0007;
 }
 .landing h2{
 
@@ -188,6 +192,18 @@
   align-items: center;
   box-shadow: rgba(255, 255, 255, 0.35) 0px 5px 15px;
   background: #fff !important;
+}
+@media screen and (max-width: 1000px) {
+  .sideImage{
+    display: none;
+  }
+  .landing{
+    min-height: auto;
+  }
+  .landing h3{
+    padding-bottom: 400px;
+  }
+  
 }
 @keyframes pop {
   from{

@@ -1,14 +1,31 @@
 "use client"
 import styles from "./page.module.css";
 import { Josefin_Sans,Inter } from 'next/font/google'
-import { useRef } from "react";
+import { useRef ,useState,useEffect} from "react";
+import { RxHamburgerMenu } from "react-icons/rx";
 import useScrollSnap from "react-use-scroll-snap";
 import  Image  from "next/image";
 const josen=Josefin_Sans({ subsets: ['latin'] })
 const inter=Inter({ subsets: ['latin'] })
 import localFont from 'next/font/local'
 const logoFont = localFont({src:'/jsMath-cmr10.ttf'})
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height
+  };
+}
 export default function Home() {
+  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
   const scrollRef = useRef(null);
   useScrollSnap({ ref: scrollRef, duration: 50, delay: 20 });
   return (
@@ -23,19 +40,20 @@ export default function Home() {
   Prayas
   </h1>
   </div>
-
+        {windowDimensions.width>1000?
   <ul>
 
     <li>Home</li>
     <li>Donate</li>
     <li>Campaings</li>
     <li>Team</li>
-  </ul>
+  </ul>:<RxHamburgerMenu size={"2rem"} className={styles.hamburger} />
+}
 </nav>
 <div className={styles.landing}>
   <h1 className={`${logoFont.className}`}>Prayaas</h1>
  
-  <h2  className={`${styles.intro} ${josen.className}`}>Create.<span>Help.</span><span>Explore</span></h2>
+  <h2  className={`${styles.intro} ${josen.className}`}>Create &#9679;<span>Help  &#9679;</span><span>Explore</span></h2>
   <h3>
   Prayass Is a community of highly motivated students.we are large group students not as many as her exs but still large 
   </h3>
