@@ -7,13 +7,30 @@
 
 
 }
+.donate h2{
+  width: 100%;
+  max-width: 600px;
+  padding-left: 50px;
+  padding-top: 10px;
+  font-weight: 300;
+
+}
+.donateImg{
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
 .visionPage{
   width: 100vw;
-  min-height: 70vh;
+  min-height: 60vh;
+
   display:flex;
   position: relative;
-  background-size: cover;
   background-image:url('/landing.jpg') ;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .tint{
   position: absolute;
@@ -22,29 +39,160 @@
   height: 100%;
 
 }
+.campaings h1{
+  left: 50%;
+  transform: translateX(-50%);
+  color: aliceblue;
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+  font-weight: 400;
+}
+.campaings{
+  height: fit-content;
+  position: relative;
+  min-height: 70vh;
+  width: 100vw;
+  background: #DB0007;
+}
 .hamburger{
   position: absolute;
   right: 30px;
 }
 .visionText{
-  width: 90%;
-  max-width: 500px;
+  width: 100%;
+  max-width: 600px;
   font-weight: 500;
   font-size: 1.25rem;
-  padding-left: 50px;
-  color: #949494;
+  margin-left: 50px;
+  border-radius: 2rem;
+  color: #afafaf;
   padding-top: 10px;
   animation: forwards 1s ease pop;
 
 }
+.donateBtn{
+  margin-left: 50px;
+  position: relative;
+  display: block;
+  margin-top: 10px;
+  background: transparent;
+  border-radius: 0.25rem;
+  width: 120px;
+  height: 50px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  cursor: pointer;
+  position: relative;
+  color: black;
+  display: block;
+}
+.donateBtn::after{
+  content: "";
+  left: 0px;
+  top: 0px;
+  transition: width 1s ;
+  width: 0px;
+  position: absolute;
+
+  height: 100%;
+  background: #ff2828;
+}
+.donateBtn span{
+  display: block;
+  position: relative;
+  color: #000;
+  z-index: 3;
+}
+
+.donateBtn:hover .donateBtnText{
+  color: #fff;
+}
+.donateBtn:hover{
+  
+  border: 1px solid red;
+  color: #fff;
+}
+.campaings h1:before{
+  content: "";
+  position: absolute;
+  width: 50%;
+  height: 1px;
+  bottom: 0;
+  border-bottom: 2px solid rgb(255, 255, 255);
+}
+.campaings h3{
+  float: right;
+  margin-left: 30px;
+  box-sizing: border-box; 
+  color: #f8f8f8;
+  font-weight: 300;
+  right: 30px;
+  top: 60px;
+  position: relative;
+  padding: 30px;
+  margin-bottom: 60px;
+
+}
+.carousel  {
+  margin-left: 30px;
+  margin-top: 30px;
+  
+
+}
+.campaignContent{
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+}
+.carousel div{
+  
+  border-radius: 2rem;
+}
+.sanjevneSlide{
+  background: linear-gradient(#DB0007,rgb(96, 184, 118));
+}
+
+.dishaSlide{
+  background: linear-gradient(#DB0007,rgb(96, 131, 184));
+}
+.donateBtn:hover::after{
+  width: 100%;
+  color: #fff;
+}
+.campaings h2{
+  text-align: center;
+  font-weight: 300;
+  padding-top: 10px;
+  color: #ececec;
+}
+.donate{
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  background-attachment: fixed;
+  background: #DADADA;
+}
+.donateText{
+  padding-left: 50px;
+  padding-top: 5%;
+  font-weight: 400;
+  font-size: 2.75rem;
+
+}
 .vision{
   padding-left: 50px;
-  padding-top: 10%;
+  padding-top: 5%;
   font-weight: 300;
   font-size: 2.75rem;
   
   animation: forwards 1s ease pop;
   color: #fff;
+}
+.wave{
+  position: absolute;
+  bottom: 0px;
+  height: 200px;
 }
 .logoDiv{
   display: flex;
@@ -85,6 +233,7 @@
   width: 250px;
   height: 250px;
   border-radius: 10px;
+  box-shadow: rgba(182, 0, 0, 0.16) 0px 1px 4px, rgb(255, 137, 137) 0px 0px 0px 3px;
   border: 4px solid black;
   rotate: 45deg ;
 
@@ -115,12 +264,13 @@
 .landing h2{
 
  display: inline-block;
-  margin-left: 50px !important;
+  margin-left: 50px;
   font-size: 25px;
   padding-top: 10px;
   padding-bottom: 10px;
 
 }
+
 .landing h2 span{
   margin-left:20px; 
 
@@ -194,14 +344,69 @@
   background: #fff !important;
 }
 @media screen and (max-width: 1000px) {
+  .visionPage h1{
+    padding: 0px;
+    height: auto;
+    padding-top: 30px;
+    text-align: center;
+    font-size: 1.75rem;
+
+  }
+  .visionPage h2{
+    padding: 0px;
+    margin: 0px;
+    text-align: center;
+  }
+  .campaignContent{
+    margin: 0px;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+  .carousel{
+    margin: 0px;
+  }
+  .visionPage h2{
+    position: relative;
+    width: 100%;
+    
+    padding: 0px;
+    font-size: 1rem;
+  }
+  .donateImg{
+    display: none;
+  }
   .sideImage{
     display: none;
   }
   .landing{
+    margin-left: 0px;
     min-height: auto;
+  }
+  .landing h1, .landing h3 , .landing h2{
+    padding-left: 0px;
+    text-align: center;
   }
   .landing h3{
     padding-bottom: 400px;
+
+    
+    margin-left: 50%;
+    display: inline-block;
+    font-size: 15px;
+    
+    transform: translateX(-50%) !important;
+  }
+  .landing h2{
+    
+    display: inline-block;
+    position: relative;
+    margin-left: 50% ;
+    display: inline-block;
+    
+    margin-left: 50%;
+    transform: translateX(-50%);
+    text-align: center ;
   }
   
 }
