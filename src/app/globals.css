@@ -4,9 +4,9 @@
 *{
   margin: 0px;
 }
-body {
+html,body {
   position: relative;
-  overflow-x: hidden;
   margin: 0px;
+  overflow-x: hidden;
   background-color:white;
 }

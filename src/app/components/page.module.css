@@ -32,6 +32,15 @@
   background-repeat: no-repeat;
   background-size: cover;
 }
+.team h1{
+  padding-top: 100px;
+  text-align: center;
+}
+.team{
+  background: #DADADA;
+  padding-bottom: 100px;
+  min-height: 80vh;
+}
 .tint{
   position: absolute;
   background: rgba(0, 0, 0, 0.7);
@@ -238,9 +247,24 @@
   rotate: 45deg ;
 
 }
+.chapter{
+  text-align: center;
+  padding-top: 10%;
+}
+
 .logoImageContainer{
   position: absolute;
   rotate: -40deg;
+}
+.chapter h3{
+  font-weight: 300;
+  padding-top: 100px;
+  text-align: center;
+}
+.chapter{
+  min-height:70vh ;
+  width: 100vw;
+  background: #DADADA;
 }
 .sideRhombus{
   width: 70px;
@@ -248,7 +272,7 @@
   animation: infinite 5s linear rotate;
   border-radius: 10px;
   position: absolute;
-  top: 0px;
+  top: 70px;
   background: #DB0007;
 }
 .sideRhombus2{
@@ -332,7 +356,7 @@
 .navbar{
   display: flex;
   flex-direction: row;
-  width: 100vw;
+  width: 100%;
   position: fixed;
   z-index: 20;
   top: 0px;
@@ -351,6 +375,10 @@
     text-align: center;
     font-size: 1.75rem;
 
+  }
+  .donateImg{
+    display: none;
+    opacity: 0;
   }
   .visionPage h2{
     padding: 0px;
@@ -380,7 +408,6 @@
     display: none;
   }
   .landing{
-    margin-left: 0px;
     min-height: auto;
   }
   .landing h1, .landing h3 , .landing h2{

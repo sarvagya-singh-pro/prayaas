@@ -4,12 +4,54 @@ import { Josefin_Sans,Inter } from 'next/font/google'
 import { useRef ,useState,useEffect} from "react";
 import { Carousel } from '@mantine/carousel';
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Drawer } from "@mantine/core";
-import useScrollSnap from "react-use-scroll-snap";
+import { Center, Drawer,Image,Text,Tabs,Card,Title } from "@mantine/core";
+import Map from './map'
 import Wave from 'react-wavify'
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css'
-import  Image  from "next/image";
+
+
+const projectPrayaasCoreCommittee = {
+    generalCommittee: [
+        ['President', 'Sampurn Kumar'],
+        ['Vice President', 'Divya Raj']
+    ],
+    operationsTeam: [
+        'Divya Raj',
+        'Amogh Anand Jha',
+        'Anjali Sharma',
+        'Ishika Nayra',
+        'Adhyayan Kumar Singh',
+        'Kritika Retolia'
+    ],
+    resourceTeam: [
+        'Priyam Harnandka',
+        'Divya Raj',
+        'Satyam Shahi',
+        'Kritika Retolia'
+    ],
+    techTeam: [
+        'Sarvagya Singh',
+        'Saksham Jha'
+    ],
+    researchWing: [
+        'Amogh Anand Jha',
+        'Divya Raj',
+        'Adhyayan Kumar Singh',
+        'Anjali Sharma'
+    ],
+    outreachTeam: [
+        'Sarthak Sidhant',
+        'Sampurn Kumar',
+        'MD. Ayaan Azhar'
+    ],
+    ideationInCharges: [
+        'Saksham Jha',
+        'Sarthak Sidhant'
+    ]
+};
+
+
 const josen=Josefin_Sans({ subsets: ['latin'] })
 const inter=Inter({ subsets: ['latin'] })
 import localFont from 'next/font/local'
@@ -102,7 +144,7 @@ export default function Home() {
     <h1 className={`${styles.donateText} ${inter.vision}`}>Donate</h1>
     <h2>Please donate we need money and unlike her we cant even strippe</h2>
     <button className={styles.donateBtn}><span className={styles.donateBtnText}>Donate</span></button>
-    <Image src={'/donate.svg'} className={styles.donateImg} width={400} height={400}>
+    <Image src={'/donate.svg'} className={styles.donateImg} mt={"md"} w={300} h={300}>
     </Image>
     <Wave fill='#DB0007'
         paused={false}
@@ -118,12 +160,32 @@ export default function Home() {
 <div className={`${styles.campaings} ${josen.className}`}>
     <h1>Campaigns</h1>
     <div className={styles.campaignContent}>
+    {windowDimensions.width>1000?
         <Carousel  slideSize={{ base: '100%', sm: '50%' }}
-      slideGap={{ base: 'xl', sm: 2 }} loop   className={styles.carousel} withIndicators w={350} height={300}>
-        <Carousel.Slide><Image width={450} height={300} src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
-        <Carousel.Slide><Image width={450} height={300} src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
+      slideGap={{ base: 'xl', sm: 2 }} loop   className={styles.carousel} withIndicators w={550} height={300}>
+        <Carousel.Slide><Image alt="profile"
+        w={550}
+        height={"100%"}
+         src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
+        <Carousel.Slide><Image alt="profile"
+         
+          w={550}
+          height="100%"
+          src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
        
-         </Carousel>
+         </Carousel>:  <Carousel  slideSize={{ base: '100%', sm: '50%' }}
+      slideGap={{ base: 'xl', sm: 2 }} loop   className={styles.carousel} withIndicators w={300} height={300}>
+        <Carousel.Slide><Image alt="profile"
+        w={300}
+        height={"100%"}
+         src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
+        <Carousel.Slide><Image alt="profile"
+         
+          w={300}
+          height="100%"
+          src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
+       
+         </Carousel>}
     <h3 className={inter.className}>
         In our campaings we found that she will ride anything with a pulse.
     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan, lorem vitae aliquam facilisis, elit ante pulvinar lorem, eget ullamcorper nisi sapien vel lectus
@@ -132,6 +194,95 @@ export default function Home() {
 
 
 </div>
+
+<div className={styles.chapter}>
+    <h1 className={josen.className}>Chapters</h1>
+  <Center>  <Map cords={[ 86.1511,23.6693]} ></Map></Center>
+
+</div>
+
+<div className={styles.team}>
+   
+
+       <h1 className={josen.className}>Core Committee </h1><br></br> 
+       <Center>
+<Tabs  color="red" variant="pills" classNames={styles.tab}  minw="80%" defaultValue="first">
+      <Tabs.List>
+       <Tabs.Tab value="first">General Committee</Tabs.Tab>
+        <Tabs.Tab value="second" color="cyan">
+          Operations Team
+        </Tabs.Tab>
+        <Tabs.Tab value="third" color="teal">
+        Tech Team
+        </Tabs.Tab>
+        <Tabs.Tab value="fourth" color="grape">
+        Resource Team
+        </Tabs.Tab>
+        <Tabs.Tab value="fifth" color="dark">
+        Outreach Team
+        </Tabs.Tab>
+      </Tabs.List>
+
+      <Tabs.Panel value="first" pt="xs">
+        {
+            projectPrayaasCoreCommittee.generalCommittee.map((el)=>{
+                return(
+                <Card mt="xl" shadow="sm" padding="lg" radius="md" withBorder>
+                    <Text >{el[0]}</Text>
+                    <Title order={2} fw={400} pt="md">{el[1]}</Title>
+                </Card>)
+            })
+        }
+      </Tabs.Panel>
+
+      <Tabs.Panel value="second" pt="xs">
+      {
+            projectPrayaasCoreCommittee.operationsTeam.map((el)=>{
+                return(
+                <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
+                    <Text >{el}</Text>
+                </Card>)
+            })
+        }
+      </Tabs.Panel>
+      <Tabs.Panel value="third" pt="xs">
+      {
+            projectPrayaasCoreCommittee.techTeam.map((el)=>{
+                return(
+                <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
+                    <Text >{el}</Text>
+                </Card>)
+            })
+        }
+      </Tabs.Panel>
+      <Tabs.Panel value="fourth" pt="xs">
+      {
+            projectPrayaasCoreCommittee.resourceTeam.map((el)=>{
+                return(
+                <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
+                    <Text >{el}</Text>
+                </Card>)
+            })
+        }
+      </Tabs.Panel>
+      <Tabs.Panel value="fifth" pt="xs">
+      {
+            projectPrayaasCoreCommittee.outreachTeam.map((el)=>{
+                return(
+                <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
+                    <Text >{el}</Text>
+                </Card>)
+            })
+        }
+      </Tabs.Panel>
+    </Tabs>
+    </Center>
+
+
+</div>
+<footer>
+    <h1>© 2024 All rights reserved</h1>
+</footer>
 </div>
 
   );
