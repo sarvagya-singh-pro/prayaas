@@ -4,7 +4,7 @@ import { Josefin_Sans,Inter,Satisfy } from 'next/font/google'
 import { useRef ,useState,useEffect} from "react";
 import { Carousel } from '@mantine/carousel';
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Center, Drawer,Image,Text,Tabs,Card,Title,Button } from "@mantine/core";
+import { Center, Drawer,Image,Text,Tabs,Card,Title,Button,Badge } from "@mantine/core";
 import Map from './map'
 import Wave from 'react-wavify'
 import '@mantine/core/styles.css';
@@ -17,7 +17,7 @@ const projectPrayaasCoreCommittee = {
         ['Vice President', 'Divya Raj']
     ],
     operationsTeam: [
-        'Divya Raj',
+        ["Team Lead",'Divya Raj'],
         'Amogh Anand Jha',
         'Anjali Sharma',
         'Ishika Nayra',
@@ -25,14 +25,14 @@ const projectPrayaasCoreCommittee = {
         'Kritika Retolia'
     ],
     resourceTeam: [
-        'Priyam Harnandka',
+        ["Team Lead",'Priyam Harnandka'],
         'Divya Raj',
         'Satyam Shahi',
         'Kritika Retolia'
     ],
     techTeam: [
-        'Sarvagya Singh',
-        'Saksham Jha'
+        ["Tech In Charge & Team lead :3",'Sarvagya Singh'],
+        ["Tech In Charge",'Saksham Jha']
     ],
     researchWing: [
         'Amogh Anand Jha',
@@ -41,13 +41,14 @@ const projectPrayaasCoreCommittee = {
         'Anjali Sharma'
     ],
     outreachTeam: [
-        'Sarthak Sidhant',
+        ["Team Lead",'Sarthak Sidhant'],
         'Sampurn Kumar',
         'MD. Ayaan Azhar'
     ],
     ideationInCharges: [
-        'Saksham Jha',
-        'Sarthak Sidhant'
+        ["Ideation in charge","Sarvagya Singh"],
+        ["Ideation in charge",'Saksham Jha'],
+        ["Ideation in charge",'Sarthak Sidhant']
     ]
 };
 
@@ -230,6 +231,9 @@ const donate = useRef(null)
         <Tabs.Tab value="fifth" color="dark">
         Outreach Team
         </Tabs.Tab>
+        <Tabs.Tab value="sixth" color="lime">
+        Ideation In-Charges
+        </Tabs.Tab>
       </Tabs.List>
 
       <Tabs.Panel value="first" pt="xs">
@@ -238,6 +242,7 @@ const donate = useRef(null)
                 return(
                 <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
                     <Text >{el[1]}</Text>
+                    <Badge color="red" variant="light" mt={"md"} p={"md"} radius={"md"} size="md">{el[0]}</Badge>
                    
                 </Card>)
             })
@@ -249,7 +254,10 @@ const donate = useRef(null)
             projectPrayaasCoreCommittee.operationsTeam.map((el)=>{
                 return(
                 <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
-                    <Text >{el}</Text>
+
+                    {typeof el!="string"?    <Text >{el[1]}</Text>:   <Text >{el}</Text>}
+             
+                    {typeof el!="string"? <Badge color="cyan" variant="light" mt={"md"} p={"md"} radius={"md"} size="md">{el[0]}</Badge>:<div></div>}
                 </Card>)
             })
         }
@@ -259,7 +267,11 @@ const donate = useRef(null)
             projectPrayaasCoreCommittee.techTeam.map((el)=>{
                 return(
                 <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
-                    <Text >{el}</Text>
+                 
+                    {typeof el!="string"?    <Text >{el[1]}</Text>:   <Text >{el}</Text>}
+             
+                    {typeof el!="string"? <Badge color="teal" variant="light" mt={"md"} p={"md"} radius={"md"} size="md">{el[0]}</Badge>:<div></div>}
+             
                 </Card>)
             })
         }
@@ -269,7 +281,11 @@ const donate = useRef(null)
             projectPrayaasCoreCommittee.resourceTeam.map((el)=>{
                 return(
                 <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
-                    <Text >{el}</Text>
+                      
+                      {typeof el!="string"?    <Text >{el[1]}</Text>:   <Text >{el}</Text>}
+             
+             {typeof el!="string"? <Badge color="grape" variant="light" mt={"md"} p={"md"} radius={"md"} size="md">{el[0]}</Badge>:<div></div>}
+      
                 </Card>)
             })
         }
@@ -279,7 +295,25 @@ const donate = useRef(null)
             projectPrayaasCoreCommittee.outreachTeam.map((el)=>{
                 return(
                 <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
-                    <Text >{el}</Text>
+                       
+                       {typeof el!="string"?    <Text >{el[1]}</Text>:   <Text >{el}</Text>}
+             
+             {typeof el!="string"? <Badge color="dark" variant="light" mt={"md"} p={"md"} radius={"md"} size="md">{el[0]}</Badge>:<div></div>}
+      
+                </Card>)
+            })
+        }
+      </Tabs.Panel>
+      <Tabs.Panel value="sixth" pt="xs">
+      {
+            projectPrayaasCoreCommittee.ideationInCharges.map((el)=>{
+                return(
+                <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
+                       
+                       {typeof el!="string"?    <Text >{el[1]}</Text>:   <Text >{el}</Text>}
+             
+             {typeof el!="string"? <Badge color="lime" variant="light" mt={"md"} p={"md"} radius={"md"} size="md">{el[0]}</Badge>:<div></div>}
+      
                 </Card>)
             })
         }
