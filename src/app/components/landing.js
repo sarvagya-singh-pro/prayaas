@@ -1,10 +1,10 @@
 "use client";
 import styles from "./page.module.css";
-import { Josefin_Sans,Inter } from 'next/font/google'
+import { Josefin_Sans,Inter,Satisfy } from 'next/font/google'
 import { useRef ,useState,useEffect} from "react";
 import { Carousel } from '@mantine/carousel';
 import { RxHamburgerMenu } from "react-icons/rx";
-import { Center, Drawer,Image,Text,Tabs,Card,Title } from "@mantine/core";
+import { Center, Drawer,Image,Text,Tabs,Card,Title,Button } from "@mantine/core";
 import Map from './map'
 import Wave from 'react-wavify'
 import '@mantine/core/styles.css';
@@ -54,6 +54,7 @@ const projectPrayaasCoreCommittee = {
 
 const josen=Josefin_Sans({ subsets: ['latin'] })
 const inter=Inter({ subsets: ['latin'] })
+const satisfy=Satisfy({ subsets: ['latin'],weight:['400'] })
 import localFont from 'next/font/local'
 const logoFont = localFont({src:'.././jsMath-cmr10.ttf'})
 function getWindowDimensions() {
@@ -66,6 +67,10 @@ function getWindowDimensions() {
 }
 }
 export default function Home() {
+const home = useRef(null)
+const donate = useRef(null)
+ const campaign = useRef(null)
+ const team = useRef(null)
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     const[drawer,Setdrawer]=useState(false)
   useEffect(() => {
@@ -84,8 +89,10 @@ export default function Home() {
 <div > 
 
 <Drawer  opened={drawer} size={"md"} position="right" onClose={()=>{Setdrawer(false)}}>
-    <h1>Nigga</h1>
-
+<Button onClick={()=>{home.current.scrollIntoView()}} w={"100%"} mt={"xl"} variant="transparent" color="dark">Home</Button>
+<Button  onClick={()=>{donate.current.scrollIntoView()}}  w={"100%"}mt={"xl"} variant="transparent" color="dark">Donate</Button>
+<Button onClick={()=>{campaign.current.scrollIntoView()}}  w={"100%"}mt={"xl"} variant="transparent" color="dark">Campaigns</Button>
+<Button onClick={()=>{team.current.scrollIntoView()}}  w={"100%"}mt={"xl"} variant="transparent" color="dark">Team</Button>
 </Drawer>
 <nav className={styles.navbar}>
 
@@ -100,14 +107,14 @@ export default function Home() {
         {windowDimensions.width>1000?
   <ul>
 
-    <li>Home</li>
-    <li>Donate</li>
-    <li>Campaings</li>
-    <li>Team</li>
+    <li onClick={()=>{home.current.scrollIntoView()}} >Home</li>
+    <li onClick={()=>{donate.current.scrollIntoView()}}>Donate</li>
+    <li onClick={()=>{campaign.current.scrollIntoView()}}>Campaings</li>
+    <li onClick={()=>{team.current.scrollIntoView()}}>Team</li>
   </ul>:<RxHamburgerMenu onClick={()=>{Setdrawer(!drawer)}} size={"2rem"} className={styles.hamburger} />
 }
 </nav>
-<div className={styles.landing}>
+<div className={styles.landing} ref={home}>
   <h1 className={`${logoFont.className}`}>Prayaas</h1>
  
   <h2  className={`${styles.intro} ${josen.className}`}>Create &#9679;<span>Help  &#9679;</span><span>Explore &#9679;</span></h2>
@@ -134,14 +141,16 @@ export default function Home() {
 </div>
 <div className={styles.visionPage}>
 <div className={styles.tint}>
-<h1 className={`${styles.vision} ${inter.vision}`}>Our Vision</h1>
+    <br></br>
+<h1 className={`${styles.vision} ${satisfy.className}`}>Our Vision</h1>
 <h2 className={`${styles.visionText} ${inter.visionText}`}>
   Our aim is do your mom lmao, and become a better human than her but that wont be hard Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi .
 </h2>
   </div>
 </div>
-<div className={styles.donate}>
-    <h1 className={`${styles.donateText} ${inter.vision}`}>Donate</h1>
+<div ref={donate} className={styles.donate}>
+    <br></br>
+    <h1  className={`${styles.donateText} ${satisfy.className}`}>Donate</h1>
     <h2>Please donate we need money and unlike her we cant even strippe</h2>
     <button className={styles.donateBtn}><span className={styles.donateBtnText}>Donate</span></button>
     <Image src={'/donate.svg'} className={styles.donateImg} mt={"md"} w={300} h={300}>
@@ -157,8 +166,8 @@ export default function Home() {
         }}
   />
 </div>
-<div className={`${styles.campaings} ${josen.className}`}>
-    <h1>Campaigns</h1>
+<div ref={campaign} className={`${styles.campaings} ${josen.className}`}>
+    <h1 className={satisfy.className}>Campaigns</h1>
     <div className={styles.campaignContent}>
     {windowDimensions.width>1000?
         <Carousel  slideSize={{ base: '100%', sm: '50%' }}
@@ -196,17 +205,17 @@ export default function Home() {
 </div>
 
 <div className={styles.chapter}>
-    <h1 className={josen.className}>Chapters</h1>
-  <Center>  <Map cords={[ 86.1511,23.6693]} ></Map></Center>
+    <h1 className={satisfy.className}>Chapters</h1>
+  <Center>  <Map  cords={[ 86.1511,23.6693]} ></Map></Center>
 
 </div>
 
-<div className={styles.team}>
+<div ref={team} className={styles.team}>
    
 
-       <h1 className={josen.className}>Core Committee </h1><br></br> 
+       <h1 className={`${satisfy.className}`}>Core Committee </h1><br></br> 
        <Center>
-<Tabs  color="red" variant="pills" classNames={styles.tab}  minw="80%" defaultValue="first">
+<Tabs  color="red" variant="pills" mt={"xl"} classNames={styles.tab}  minw="80%" defaultValue="first">
       <Tabs.List>
        <Tabs.Tab value="first">General Committee</Tabs.Tab>
         <Tabs.Tab value="second" color="cyan">

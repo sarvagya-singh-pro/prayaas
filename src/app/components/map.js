@@ -10,6 +10,7 @@ const Map = (props) => {
   const mapContainerStyle = {
     width: '80%',
     height: '500px',
+
     marginTop:'30px',
     overflow: 'hidden',
     marginBottom:'30px',
@@ -23,11 +24,11 @@ const Map = (props) => {
       style={mapStyle}
       containerStyle={mapContainerStyle}
       center={props.cords}
-      zoom={zoomLevel}
+      zoom={[12]}
+      scrollZoom={false}
     >
      
   
-    <ZoomControl/>
 
          </Mapbox>
   );

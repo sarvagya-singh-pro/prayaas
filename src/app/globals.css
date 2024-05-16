@@ -4,6 +4,10 @@
 *{
   margin: 0px;
 }
+html{
+  
+  scroll-behavior: smooth;
+}
 html,body {
   position: relative;
   margin: 0px;
