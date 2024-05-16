@@ -15,6 +15,41 @@
   font-weight: 300;
 
 }
+.footer{
+  display: flex;
+  padding: 30px;
+  flex-direction: row;
+}
+.footer div{
+  margin-left: 60px;
+}
+.footer ul{
+  list-style:none ;
+}
+.footer h3{
+  left: 50%;
+  transform: translateX(-50%);
+  color: rgb(255, 255, 255);
+  display: inline-block;
+  padding-bottom: 5px;
+  position: relative;
+  font-weight: 400;
+  text-align: center;
+  margin: 0px;
+}
+.footer h3::before{  
+content: "";
+position: absolute;
+width: 50%;
+height: 1px;
+bottom: 0;
+
+border-bottom: 2px solid rgb(255, 255, 255);
+}
+.footer li{
+  color: #e2dfdf;
+  padding-top: 20px;
+}
 .donateImg{
   position: absolute;
   right: 0px;
@@ -368,6 +403,9 @@
   background: #fff !important;
 }
 @media screen and (max-width: 1000px) {
+  .footer{
+    flex-direction: column;
+  }
   .visionPage h1{
     padding: 0px;
     height: auto;
@@ -376,6 +414,7 @@
     font-size: 1.75rem;
 
   }
+ 
   .donateImg{
     display: none;
     opacity: 0;

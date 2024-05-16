@@ -227,9 +227,9 @@ export default function Home() {
         {
             projectPrayaasCoreCommittee.generalCommittee.map((el)=>{
                 return(
-                <Card mt="xl" shadow="sm" padding="lg" radius="md" withBorder>
-                    <Text >{el[0]}</Text>
-                    <Title order={2} fw={400} pt="md">{el[1]}</Title>
+                <Card mt="md" shadow="sm" padding="lg" radius="md" withBorder>
+                    <Text >{el[1]}</Text>
+                   
                 </Card>)
             })
         }
@@ -280,8 +280,27 @@ export default function Home() {
 
 
 </div>
-<footer>
-    <h1>© 2024 All rights reserved</h1>
+<footer >
+    <div className={styles.footer}>
+        <div>
+            <h3>Concact</h3>
+            <ul>
+                <li>hehe@hehe.hehe</li>
+                <li>+91 100</li>
+            </ul>
+
+        </div>
+        <div>
+          <ul>
+            <li>Terms Of service</li>
+            <li>Privacy Policy</li>
+          </ul>
+
+        </div>
+        
+     </div>
+     <h2 className={inter.className}>© {new Date().getFullYear()} All rights Taken By Modi</h2>
+   
 </footer>
 </div>
 
