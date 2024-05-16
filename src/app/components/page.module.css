@@ -204,7 +204,12 @@ border-bottom: 2px solid rgb(255, 255, 255);
 }
 .carousel  {
   margin-left: 30px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   margin-top: 30px;
+  background-color:	rgb(255,249,224); 	/* Mat color */
+	border-width:			7px;	/* Gold edge of mat */
+	border-style:			solid;
+	border-color:			rgb(168, 84, 4) rgb(207, 93, 0) rgb(145, 110, 0) rgb(145, 65, 0);
   
 
 }
@@ -213,10 +218,6 @@ border-bottom: 2px solid rgb(255, 255, 255);
   display: flex;
   justify-content: space-around;
   flex-direction: row;
-}
-.carousel div{
-  
-  border-radius: 2rem;
 }
 .sanjevneSlide{
   background: linear-gradient(#DB0007,rgb(96, 184, 118));
