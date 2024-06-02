@@ -4,6 +4,7 @@ import { Josefin_Sans,Inter,Satisfy } from 'next/font/google'
 import { useRef ,useState,useEffect} from "react";
 import { Carousel } from '@mantine/carousel';
 import { RxHamburgerMenu } from "react-icons/rx";
+import Marquee from "react-fast-marquee";
 import { Center, Drawer,Image,Text,Tabs,Card,Title,Button,Badge } from "@mantine/core";
 import Map from './map'
 import Wave from 'react-wavify'
@@ -18,7 +19,6 @@ const projectPrayaasCoreCommittee = {
     ],
     operationsTeam: [
         ["Team Lead",'Divya Raj'],
-        'Amogh Anand Jha',
         'Anjali Sharma',
         'Ishika Nayra',
         'Adhyayan Kumar Singh',
@@ -31,11 +31,10 @@ const projectPrayaasCoreCommittee = {
         'Kritika Retolia'
     ],
     techTeam: [
-        ["Tech In Charge & Team lead :3",'Sarvagya Singh'],
+        ["Tech In Charge ",'Sarvagya Singh'],
         ["Tech In Charge",'Saksham Jha']
     ],
     researchWing: [
-        'Amogh Anand Jha',
         'Divya Raj',
         'Adhyayan Kumar Singh',
         'Anjali Sharma'
@@ -89,7 +88,7 @@ const donate = useRef(null)
 
 <div > 
 
-<Drawer  opened={drawer} size={"md"} position="right" onClose={()=>{Setdrawer(false)}}>
+<Drawer  transitionProps={{ transition: 'rotate-right', duration: 150, timingFunction: 'linear' }}  opened={drawer} size={"md"} position="right" onClose={()=>{Setdrawer(false)}}>
 <Button onClick={()=>{home.current.scrollIntoView()}} w={"100%"} mt={"xl"} variant="transparent" color="dark">Home</Button>
 <Button  onClick={()=>{donate.current.scrollIntoView()}}  w={"100%"}mt={"xl"} variant="transparent" color="dark">Donate</Button>
 <Button onClick={()=>{campaign.current.scrollIntoView()}}  w={"100%"}mt={"xl"} variant="transparent" color="dark">Campaigns</Button>
@@ -138,7 +137,13 @@ const donate = useRef(null)
 
     </div>
   </div>
-
+  
+</div>
+<div className={styles.marq}>
+<Marquee>
+  <Title order={1}> can be a React component, multiple React components, or just some text.
+  </Title>
+</Marquee>
 </div>
 <div className={styles.visionPage}>
 <div className={styles.tint}>
@@ -168,7 +173,7 @@ const donate = useRef(null)
   />
 </div>
 <div ref={campaign} className={`${styles.campaings} ${josen.className}`}>
-    <h1 className={satisfy.className}>Campaigns</h1>
+   <Center> <h1 className={satisfy.className}>Campaigns</h1></Center>
     <div className={styles.campaignContent}>
     {windowDimensions.width>1000?
         <Carousel  slideSize={{ base: '100%', sm: '50%' }}
