@@ -20,7 +20,7 @@ const Refferpage = () => {
                 body:JSON.stringify({uuid:pram.split('/').pop(),ip:data.IPv4})
                 
             })
-            await router.push('https://web.whatsapp.com/')
+            await router.push('https://chat.whatsapp.com/Ezy8oMEKoqMHZAvu6kS4LL')
         }
         a()
        // 
