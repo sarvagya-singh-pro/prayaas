@@ -13,5 +13,11 @@ generator client {
 model User {
   uuid        String      @unique
   name        String      @unique
-  referal     Int       @default(0)
+  referal     Refer[]
+}
+model Refer{
+  id Int @id @default(autoincrement())
+  fromId String
+  from   User   @relation(fields: [fromId], references: [uuid])
+  ip String @unique
 }

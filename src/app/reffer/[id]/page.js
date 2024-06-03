@@ -1,22 +1,29 @@
 "use client";
 import { useRouter,usePathname } from 'next/navigation';
 import { useEffect } from 'react';
+import requestIp from 'request-ip'
 const Refferpage = () => {
     const router = useRouter()
     const pram=usePathname()
    
     useEffect(()=>{
+        console.log(pram.split('/').pop())
         async function a(){
+            const response = await fetch('https://geolocation-db.com/json/');
+            const data = await response.json();
+            
             await fetch('/api/verify_reffer',{
                 method: 'POST',
                 headers:{
                     "Content-Type": "application/json",
                 },
-                body:JSON.stringify({uuid:pram.split('/').pop()})
+                body:JSON.stringify({uuid:pram.split('/').pop(),ip:data.IPv4})
+                
             })
+            await router.push('https://web.whatsapp.com/')
         }
         a()
-        router.push('https://web.whatsapp.com/')
+       // 
    },[])
 
     return (
