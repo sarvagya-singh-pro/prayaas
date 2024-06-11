@@ -5,6 +5,10 @@
 *{
   margin: 0px;
 }
+.slide-in {
+  transform: translateY(0) !important;
+  opacity: 1 !important;
+}
 html{
   
   scroll-behavior: smooth;
@@ -13,6 +17,7 @@ body{
   
   scroll-snap-type: y mandatory;
 }
+
 ::-webkit-scrollbar {
   width: 10px;
 }

@@ -62,7 +62,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
 
   display:flex;
   position: relative;
-  background-image:url('/landing.jpg') ;
+  background-image:url('/vision.jpg') ;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -80,8 +80,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
   display: inline;
   border-radius: 0.8em 0.3em;
   background: transparent;
-  background-image: linear-gradient(-225deg, #AC32E4 0%, #7918F2 48%, #4801FF 100%);
-  color: #fff;
+  color: #000;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
   font-weight: 400;
@@ -93,7 +92,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
 }
 .tint{
   position: absolute;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.65);
   width: 100vw;
   height: 100%;
 
@@ -101,13 +100,12 @@ border-bottom: 2px solid rgb(255, 255, 255);
 .campaings h1{
   text-align: center;
   display: inline-block;
- color: aliceblue;
+ color: #000;
   display: inline-block;
   padding-bottom: 5px;
   padding-left: 30px;
   padding-right: 20px;
   border-radius: 0.8em 0.3em;
-  background-image: linear-gradient(to right, #f78ca0 0%, #f9748f 19%, #fd868c 60%, #fe9a8b 100%);
   
   color: #fff;
   -webkit-box-decoration-break: clone;
@@ -248,9 +246,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
   display: inline;
   border-radius: 0.8em 0.3em;
   background: transparent;
-  color: #fff;
-  background-image: linear-gradient(120deg, #f6d365 0%, #fda085 100%);
-  -webkit-box-decoration-break: clone;
+  color: #000;
   box-decoration-break: clone;
   font-size: 2.75rem;
 
@@ -266,9 +262,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
   display: inline;
   border-radius: 0.8em 0.3em;
   background: transparent;
-  color: #fff;
-  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
-  -webkit-box-decoration-break: clone;
+  color: #000;
   box-decoration-break: clone;
   
   animation: forwards 1s ease pop;
@@ -295,7 +289,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
   
 }
 .sideImage{
-  width: 35%;
+  width: 45%;
   max-width: 800px;
   min-width: 300px;
   position: absolute;
@@ -306,17 +300,25 @@ border-bottom: 2px solid rgb(255, 255, 255);
 }
 .container{
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
+}
+.blob{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;
+  height: 500px;
+  background: url('/blob.svg');
 }
 .mainRhombus{
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 250px;
-  height: 250px;
+  width: 100px;
+  height: 100px;
   border-radius: 10px;
   box-shadow: rgba(182, 0, 0, 0.16) 0px 1px 4px, rgb(255, 137, 137) 0px 0px 0px 3px;
   border: 4px solid black;
@@ -336,8 +338,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
   padding-top: 10px;
   padding-bottom: 10px;
   background: transparent;
-  color: #fff;
-  background-image: linear-gradient(to right, #43e97b 0%, #38f9d7 100%);
+  color: #000;
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;
 
@@ -404,6 +405,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
 .logo{
   color: #000;
   padding-left: 10px;
+  font-weight: 600;
   font-family: var(--font-inter)
 }
 .navbar ul{
@@ -464,15 +466,10 @@ border-bottom: 2px solid rgb(255, 255, 255);
   display: flex;
   align-items: center;
   overflow: -moz-hidden-unscrollable !important;
-  background: #a7a7a7;
+  background:linear-gradient( #a7a7a7 0%,#fff 110%);
+  padding-bottom: 50px;
 }
-.marq h1{
-  width: 100%;
-  height: 100%;
-  overflow-y: scroll;
-  padding-right: 17px; /* Increase/decrease this value for cross-browser compatibility */
-  box-sizing: content-box;
-}
+
 @media screen and (max-width: 1000px) {
   .footer{
     flex-direction: column;

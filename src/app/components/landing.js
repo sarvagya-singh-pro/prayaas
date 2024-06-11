@@ -5,7 +5,7 @@ import { useRef ,useState,useEffect} from "react";
 import { Carousel } from '@mantine/carousel';
 import { RxHamburgerMenu } from "react-icons/rx";
 import Marquee from "react-fast-marquee";
-import { Center, Drawer,Image,Text,Tabs,Card,Title,Button,Badge } from "@mantine/core";
+import { Center, Drawer,Image,Text,Tabs,Card,Title,Button,Badge, BackgroundImage } from "@mantine/core";
 import Map from './map'
 import Wave from 'react-wavify'
 import '@mantine/core/styles.css';
@@ -31,8 +31,8 @@ const projectPrayaasCoreCommittee = {
         'Kritika Retolia'
     ],
     techTeam: [
-        ["Tech In Charge ",'Sarvagya Singh'],
-        ["Tech In Charge",'Saksham Jha']
+        ["Tech Lead ",'Sarvagya Singh'],
+        ["Tech Lead",'Saksham Jha']
     ],
     researchWing: [
         'Divya Raj',
@@ -67,21 +67,15 @@ function getWindowDimensions() {
 }
 }
 export default function Home() {
+  const [isIntersecting, setIsIntersecting] = useState(false);
+  const ref = useRef(null);
 const home = useRef(null)
 const donate = useRef(null)
  const campaign = useRef(null)
  const team = useRef(null)
   const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     const[drawer,Setdrawer]=useState(false)
-  useEffect(() => {
-    function handleResize() {
-      setWindowDimensions(getWindowDimensions());
-    }
-    if (window){
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-    }
-  }, []);
+
   return (
 
 
@@ -98,7 +92,7 @@ const donate = useRef(null)
 
   <div className={styles.logoDiv}>
 <Image src={'/logo.jpg'} width={50} height={50}/>
-<h1 className={`${styles.logo} ${josen.logo}`}>
+<h1 className={`${styles.logo} ${logoFont.className}`}>
  
   
   Prayaas
@@ -114,6 +108,7 @@ const donate = useRef(null)
   </ul>:<RxHamburgerMenu onClick={()=>{Setdrawer(!drawer)}} size={"2rem"} className={styles.hamburger} />
 }
 </nav>
+<main style={{transition:' all 1s ease-in'}} ref={ref}>
 <div className={styles.landing} ref={home}>
   <h1 className={`${logoFont.className}`}>Prayaas</h1>
  
@@ -123,13 +118,14 @@ const donate = useRef(null)
   </h3>
   <div className={styles.sideImage}>
     <div className={styles.container}>
-      <div className={styles.mainRhombus}>
-        <div className={styles.logoImageContainer}>
-        <Image src={'/logo.svg'} width={400} height={400} />
-        </div>
+     <div className={styles.blob}>
+      <Image src={'/kids.png'} w={401} height={401} />
+
+     </div>
+        
       </div>
 
-    </div>
+    
     <div className={styles.sideRhombus}>
 
     </div>
@@ -140,9 +136,18 @@ const donate = useRef(null)
   
 </div>
 <div className={styles.marq}>
-<Marquee>
-  <Title order={1}> can be a React component, multiple React components, or just some text.
-  </Title>
+<Marquee autoFill={true}>
+  <Image w={200} ml={"xl"}  mr={"xl"} src={'/dps.png'}/>
+  <Title order={1} ml={"xl"} mr={"xl"}c={"#2e6634"}>DPS Bokaro</Title>
+  <Image w={150} ml={"xl"}  mr={"xl"}src={'/mgm.png'}/>
+  <Title order={1} ml={"xl"} mr={"xl"} c={"#b02b27"}>MGM Bokaro</Title>
+  <Image w={100} ml={"xl"}  mr={"xl"}src={'/chinmaya.png'}/>
+  
+  <Title order={1} ml={"xl"} mr={"xl"} c={"#000"}>Chinmaya Vidyalaya </Title>
+  <Image w={150} ml={"xl"}  mr={"xl"}src={'/GGPS.png'}/>
+  
+  <Title order={1} ml={"xl"} mr={"xl"} c={"#000"}>GGPS Bokaro </Title>
+  
 </Marquee>
 </div>
 <div className={styles.visionPage}>
@@ -215,10 +220,10 @@ const donate = useRef(null)
   <Center>  <Map  cords={[ 86.1511,23.6693]} ></Map></Center>
 
 </div>
-
 <div ref={team} className={styles.team}>
    
 
+<br></br>
        <h1 className={`${satisfy.className}`}>Core Committee </h1><br></br> 
        <Center>
 <Tabs  color="red" variant="pills" mt={"xl"} classNames={styles.tab}  minw="80%" defaultValue="first">
@@ -350,6 +355,7 @@ const donate = useRef(null)
      <h2 className={inter.className}>© {new Date().getFullYear()} All rights Taken By Modi</h2>
    
 </footer>
+</main>
 </div>
 
   );
