@@ -119,7 +119,7 @@ const donate = useRef(null)
   <div className={styles.sideImage}>
     <div className={styles.container}>
      <div className={styles.blob}>
-      <Image src={'/kids.png'} w={401} height={401} />
+      <Image src={'/kids.png'} w={451} height={451} />
 
      </div>
         
@@ -144,7 +144,7 @@ const donate = useRef(null)
   <Image w={100} ml={"xl"}  mr={"xl"}src={'/chinmaya.png'}/>
   
   <Title order={1} ml={"xl"} mr={"xl"} c={"#000"}>Chinmaya Vidyalaya </Title>
-  <Image w={150} ml={"xl"}  mr={"xl"}src={'/GGPS.png'}/>
+  <Image w={150} ml={"xl"}  mr={"xl"}src={'/ggps.png'}/>
   
   <Title order={1} ml={"xl"} mr={"xl"} c={"#000"}>GGPS Bokaro </Title>
   

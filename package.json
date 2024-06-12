@@ -18,10 +18,10 @@
     "next": "14.2.3",
     "nextjs-current-url": "^1.0.3",
     "react": "^18",
+    "react-copy-to-clipboard": "^5.1.0",
     "react-dom": "^18",
     "react-fast-marquee": "^1.6.4",
     "react-icons": "^5.2.1",
-    "react-mapbox-gl": "^5.1.1",
     "react-use-scroll-snap": "^1.0.0",
     "react-wavify": "^1.10.0",
     "request-ip": "^3.3.0"
