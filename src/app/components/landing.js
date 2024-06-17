@@ -11,7 +11,7 @@ import Wave from 'react-wavify'
 import '@mantine/core/styles.css';
 import '@mantine/carousel/styles.css'
 
-
+import { useMediaQuery } from 'react-responsive';
 const projectPrayaasCoreCommittee = {
     generalCommittee: [
         ['President', 'Sampurn Kumar'],
@@ -58,22 +58,17 @@ const satisfy=Satisfy({ subsets: ['latin'],weight:['400'] })
 import localFont from 'next/font/local'
 const logoFont = localFont({src:'.././jsMath-cmr10.ttf'})
 function getWindowDimensions() {
-  if(window){
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height
-  };
-}
+ 
 }
 export default function Home() {
+  const isSmallScreen = useMediaQuery({ maxWidth: 1000 });
+
   const [isIntersecting, setIsIntersecting] = useState(false);
   const ref = useRef(null);
 const home = useRef(null)
 const donate = useRef(null)
  const campaign = useRef(null)
  const team = useRef(null)
-  const [windowDimensions, setWindowDimensions] = useState(getWindowDimensions());
     const[drawer,Setdrawer]=useState(false)
 
   return (
@@ -98,7 +93,7 @@ const donate = useRef(null)
   Prayaas
   </h1>
   </div>
-        {windowDimensions.width>1000?
+        {!isSmallScreen ?
   <ul>
 
     <li onClick={()=>{home.current.scrollIntoView()}} >Home</li>
@@ -180,7 +175,7 @@ const donate = useRef(null)
 <div ref={campaign} className={`${styles.campaings} ${josen.className}`}>
    <Center> <h1 className={satisfy.className}>Campaigns</h1></Center>
     <div className={styles.campaignContent}>
-    {windowDimensions.width>1000?
+    {!isSmallScreen?
         <Carousel  slideSize={{ base: '100%', sm: '50%' }}
       slideGap={{ base: 'xl', sm: 2 }} loop   className={styles.carousel} withIndicators w={550} height={300}>
         <Carousel.Slide><Image alt="profile"

@@ -2,7 +2,7 @@
 import dynamic from 'next/dynamic'
 const Home= dynamic(
   () => import('./components/landing'),
-  { ssr: false }
+  { ssr: true }
 )
 const page = () => {
   return (
