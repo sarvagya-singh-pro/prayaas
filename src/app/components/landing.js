@@ -56,7 +56,7 @@ const josen=Josefin_Sans({ subsets: ['latin'] })
 const inter=Inter({ subsets: ['latin'] })
 const satisfy=Satisfy({ subsets: ['latin'],weight:['400'] })
 import localFont from 'next/font/local'
-const logoFont = localFont({src:'.././jsMath-cmr10.ttf'})
+const logoFont = localFont({src:'jsMath-cmr10.ttf'})
 function getWindowDimensions() {
  
 }
@@ -86,7 +86,7 @@ const donate = useRef(null)
 <nav className={styles.navbar}>
 
   <div className={styles.logoDiv}>
-<Image src={'/logo.jpg'} width={50} height={50}/>
+<Image src={'/logo.png'} width={50} height={50}/>
 <h1 className={`${styles.logo} ${logoFont.className}`}>
  
   
@@ -109,7 +109,8 @@ const donate = useRef(null)
  
   <h2  className={`${styles.intro} ${josen.className}`}>Create &#9679;<span>Help  &#9679;</span><span>Explore &#9679;</span></h2>
   <h3>
-  Prayass Is a community of highly motivated students.we are large group students not as many as her exs but still large 
+  Welcome to Project Prayaas! We're a dynamic community of students from various schools across Bokaro Steel City, united by a common vision -  serving our community and thus, making a positive difference in the society. Join us in lighting up our communities with kindness and enthusiasm—your journey towards making an impact starts here!
+
   </h3>
   <div className={styles.sideImage}>
     <div className={styles.container}>
@@ -150,14 +151,14 @@ const donate = useRef(null)
     <br></br>
 <h1 className={`${styles.vision} ${satisfy.className}`}>Our Vision</h1>
 <h2 className={`${styles.visionText} ${inter.visionText}`}>
-  Our aim is do your mom lmao, and become a better human than her but that wont be hard Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi .
-</h2>
+At Prayaas, our aim is to empower and uplift our local communities through two flagship campaigns: Sanjeevni and Disha.  Disha provides career counseling to underprivileged children, offering guidance and resources to help them achieve their dreams. Sanjeevni delivers CPR and First Aid demonstrations, equipping individuals with vital life-saving skills. Through these initiatives, we strive to foster hope, education, and safety, creating a brighter, more compassionate world. Join us in making a meaningful impact!
+ </h2>
   </div>
 </div>
 <div ref={donate} className={styles.donate}>
     <br></br>
     <h1  className={`${styles.donateText} ${satisfy.className}`}>Donate</h1>
-    <h2>Please donate we need money and unlike her we cant even strippe</h2>
+    <h2>We have embarked on a journey to bring about a positive change. But in this task, we need your help. By donating to Prayaas, you're directly contributing to our flagship campaigns, Sanjeevni and Disha. Every contribution, no matter the size, helps us continue our mission of empowerment, education, and safety. Together, we can create lasting change. Your support can make a world of difference!</h2>
     <button className={styles.donateBtn}><span className={styles.donateBtnText}>Donate</span></button>
     <Image src={'/donate.svg'} className={styles.donateImg} mt={"md"} w={300} h={300}>
     </Image>
@@ -202,9 +203,8 @@ const donate = useRef(null)
        
          </Carousel>}
     <h3 className={inter.className}>
-        In our campaings we found that she will ride anything with a pulse.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed accumsan, lorem vitae aliquam facilisis, elit ante pulvinar lorem, eget ullamcorper nisi sapien vel lectus
-    </h3>
+    We're thrilled to share the success of our first Disha campaign at Utkramit Middle School, Ranipokhar! The response from students and teachers was overwhelmingly positive, with enthusiastic participation and heartfelt gratitude. The principal praised our efforts, highlighting the significant impact of our career counselling sessions. This incredible feedback fuels our passion and commitment to continue making a difference. Thank you to everyone who made this event a success—we look forward to many more!
+          </h3>
     </div>
 
 

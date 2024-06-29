@@ -12,6 +12,7 @@
   max-width: 600px;
   padding-left: 50px;
   padding-top: 10px;
+  font-size: 18px;
   
   font-weight: 300;
 
@@ -58,10 +59,10 @@ border-bottom: 2px solid rgb(255, 255, 255);
 }
 .visionPage{
   width: 100vw;
-  min-height: 60vh;
-
-  display:flex;
+  min-height: 70vh;
+  display: block;
   position: relative;
+  display:flex;
   background-image:url('/vision.jpg') ;
   background-attachment: fixed;
   background-position: center;
@@ -124,6 +125,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
   right: 30px;
 }
 .visionText{
+  display: block;
   width: 100%;
   max-width: 600px;
   font-weight: 500;
@@ -132,7 +134,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
   border-radius: 2rem;
   color: #afafaf;
   padding-top: 10px;
-  animation: forwards 1s ease pop;
+  padding-bottom: 50px;
 
 }
 .donateBtn{
@@ -265,6 +267,8 @@ border-bottom: 2px solid rgb(255, 255, 255);
   color: #000;
   box-decoration-break: clone;
   
+  padding-bottom: 50px;
+  margin-bottom: 50px;
   animation: forwards 1s ease pop;
   color: #fff;
 }

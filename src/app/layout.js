@@ -9,6 +9,13 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <head>
+        <title>Prayaas</title>
+        <link
+  rel="preload"
+  href="/components/jsMath-cmr10.ttf"
+  as="font"
+  type="font/ttf"
+/>
       <link rel="icon" sizes="any" href="/logo.ico"/>
         <meta name="description" content = "Prayaas is a non profit community service club that enables unfortunate people get support and help "/>
         <meta name = "keywords" content = "Non-profit, help, student-run, support,help"/>
