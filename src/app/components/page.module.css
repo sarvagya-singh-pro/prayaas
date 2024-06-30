@@ -27,16 +27,16 @@
 }
 .footer ul{
   list-style:none ;
+  text-decoration: none;
 }
 .footer h3{
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-100%);
   color: rgb(255, 255, 255);
   display: inline-block;
   padding-bottom: 5px;
   position: relative;
   font-weight: 400;
-  text-align: center;
   margin: 0px;
 }
 .footer h3::before{  
@@ -50,7 +50,13 @@ border-bottom: 2px solid rgb(255, 255, 255);
 }
 .footer li{
   color: #e2dfdf;
+  
+  text-decoration: none;
   padding-top: 20px;
+}
+.footer ul a{
+  
+  text-decoration: none;
 }
 .donateImg{
   position: absolute;
@@ -115,6 +121,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
 }
 .campaings{
   height: fit-content;
+  margin-top: 30px;
   position: relative;
   min-height: 70vh;
   width: 100vw;
@@ -201,6 +208,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
 .carousel  {
   box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   margin-top: 30px;
+  height: calc(300px + 14px);
   background-color:	rgb(255,249,224); 	/* Mat color */
 	border-width:			7px;	/* Gold edge of mat */
 	border-style:			solid;
@@ -274,7 +282,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
 }
 .wave{
   position: absolute;
-  bottom: 0px;
+  bottom: -30px;
   height: 200px;
 }
 .logoDiv{
@@ -501,9 +509,7 @@ border-bottom: 2px solid rgb(255, 255, 255);
     align-items: center;
   }
   .carousel{
-    
-    margin-left: 50%;
-    transform: translateX(-50%);
+    position: relative;
   }
   .visionPage h2{
     position: relative;

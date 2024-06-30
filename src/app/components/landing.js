@@ -181,12 +181,12 @@ At Prayaas, our aim is to empower and uplift our local communities through two f
       slideGap={{ base: 'xl', sm: 2 }} loop   className={styles.carousel} withIndicators w={550} height={300}>
         <Carousel.Slide><Image alt="profile"
         w={550}
-        height={"100%"}
+        height={300}
          src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
         <Carousel.Slide><Image alt="profile"
          
           w={550}
-          height="100%"
+          height={300}
           src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
        
          </Carousel>:  <Carousel  slideSize={{ base: '100%', sm: '50%' }}
@@ -333,8 +333,8 @@ At Prayaas, our aim is to empower and uplift our local communities through two f
         <div>
             <h3>Concact</h3>
             <ul>
-                <li>hehe@hehe.hehe</li>
-                <li>+91 100</li>
+            <a href="mailto:projectprayaasclub@gmail.com">   <li>projectprayaasclub@gmail.com</li></a>
+            <a href="tel:+91 92414 89318">    <li>+91 92414 89318</li></a>
             </ul>
 
         </div>
@@ -347,7 +347,7 @@ At Prayaas, our aim is to empower and uplift our local communities through two f
         </div>
         
      </div>
-     <h2 className={inter.className}>© {new Date().getFullYear()} All rights Taken By Modi</h2>
+     <h2 className={inter.className}>© {new Date().getFullYear()} All Rights Reserved </h2>
    
 </footer>
 </main>
