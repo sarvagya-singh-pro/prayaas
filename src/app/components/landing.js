@@ -182,26 +182,47 @@ At Prayaas, our aim is to empower and uplift our local communities through two f
         <Carousel.Slide><Image alt="profile"
         w={550}
         height={300}
-         src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
+         src={"/campaign1.png"}></Image></Carousel.Slide>
         <Carousel.Slide><Image alt="profile"
          
           w={550}
           height={300}
-          src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
-       
-         </Carousel>:  <Carousel  slideSize={{ base: '100%', sm: '50%' }}
-      slideGap={{ base: 'xl', sm: 2 }} loop   className={styles.carousel} withIndicators w={300} height={300}>
-        <Carousel.Slide><Image alt="profile"
-        w={300}
-        height={"100%"}
-         src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
-        <Carousel.Slide><Image alt="profile"
+          src={"/campaign2.png"}></Image></Carousel.Slide>
+           <Carousel.Slide><Image alt="profile"
          
-          w={300}
-          height="100%"
-          src={"https://cdn.pixabay.com/photo/2012/08/27/14/19/mountains-55067_640.png"}></Image></Carousel.Slide>
+         w={550}
+         height={300}
+         src={"/campaign3.png"}></Image></Carousel.Slide>
+           <Carousel.Slide><Image alt="profile"
+         
+         w={550}
+         height={300}
+         src={"/campaign4.png"}></Image></Carousel.Slide>
        
-         </Carousel>}
+         </Carousel>:  
+           <Carousel  slideSize={{ base: '100%', sm: '50%' }}
+           slideGap={{ base: 'xl', sm: 2 }} loop   className={styles.carousel} withIndicators w={300} height={300}>
+             <Carousel.Slide><Image alt="profile"
+             w={300}
+             height={300}
+              src={"/campaign1.png"}></Image></Carousel.Slide>
+             <Carousel.Slide><Image alt="profile"
+              
+               w={300}
+               height={300}
+               src={"/campaign2.png"}></Image></Carousel.Slide>
+                <Carousel.Slide><Image alt="profile"
+              
+              w={300}
+              height={300}
+              src={"/campaign3.png"}></Image></Carousel.Slide>
+                <Carousel.Slide><Image alt="profile"
+              
+              w={300}
+              height={300}
+              src={"/campaign4.png"}></Image></Carousel.Slide>
+            
+              </Carousel>}
     <h3 className={inter.className}>
     We're thrilled to share the success of our first Disha campaign at Utkramit Middle School, Ranipokhar! The response from students and teachers was overwhelmingly positive, with enthusiastic participation and heartfelt gratitude. The principal praised our efforts, highlighting the significant impact of our career counselling sessions. This incredible feedback fuels our passion and commitment to continue making a difference. Thank you to everyone who made this event a success—we look forward to many more!
           </h3>
@@ -331,7 +352,7 @@ At Prayaas, our aim is to empower and uplift our local communities through two f
 <footer >
     <div className={styles.footer}>
         <div>
-            <h3>Concact</h3>
+            <h3>Contact</h3>
             <ul>
             <a href="mailto:projectprayaasclub@gmail.com">   <li>projectprayaasclub@gmail.com</li></a>
             <a href="tel:+91 92414 89318">    <li>+91 92414 89318</li></a>
