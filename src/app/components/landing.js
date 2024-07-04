@@ -19,8 +19,7 @@ const projectPrayaasCoreCommittee = {
     ],
     operationsTeam: [
         ["Team Lead",'Divya Raj'],
-        'Anjali Sharma',
-        'Ishika Nayra',
+        'Kavya Singh',
         'Adhyayan Kumar Singh',
         'Kritika Retolia'
     ],
@@ -37,12 +36,13 @@ const projectPrayaasCoreCommittee = {
     researchWing: [
         'Divya Raj',
         'Adhyayan Kumar Singh',
-        'Anjali Sharma'
+        'Sampurn Kumar'
     ],
     outreachTeam: [
         ["Team Lead",'Sarthak Sidhant'],
         'Sampurn Kumar',
-        'MD. Ayaan Azhar'
+        'MD. Ayaan Azhar',
+        'Adhyayan Kumar Singh',
     ],
     ideationInCharges: [
         ["Ideation in charge","Sarvagya Singh"],
